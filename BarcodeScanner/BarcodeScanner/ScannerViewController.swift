@@ -103,11 +103,11 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
         
-        guard let barcodeString = readableObject.stringValue else {
+        guard let barcode = readableObject.stringValue else {
             scannerDelegate?.didSurface(error: .invalidScannedValue)
             return
         }
         
-        scannerDelegate?.didFind(barcode: barcodeString)
+        scannerDelegate?.didFind(barcode: barcode)
     }
 }
